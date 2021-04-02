@@ -135,10 +135,26 @@
 					<li> <a href="https://coderomeo.github.io/Webtest/Fahrenheit_to_Celsius.html"> Temperature Converter </a>
 					<li> <a href="https://coderomeo.github.io/Webtest/SecondPage.html"> Second page </a>
 					<li> <a href="http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=1"> ON </a>
-					<li> <a href="http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=0"> OFF </a>	
+					<li> <a href="http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=0"> OFF </a>
+						
+						
+						<button type="button" id ="button" onclick="ON()"> ON </button>
+						<button type="button" id ="button" onclick="OFF()"> OFF </button>
 					</ul>
 			</div>
 
+	
+	
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>	
+	
 <script>
 
 /* global variables */
@@ -164,6 +180,23 @@ function play(userChoice) {
 	// Play Function ends
 
 }
+	
+	function ON() {
+		document.getElementById("demo").innerHTML = "ON";
+		
+		const http = new XMLHttpRequest()
+
+		http.open("GET", "https://api.lyrics.ovh/v1/toto/africa")
+		http.send()
+
+		http.onload = () => console.log(http.responseText)
+	}
+	
+	function OFF() {
+		document.getElementById("demo").innerHTML = "OFF";
+	}
+	
+	
 
 // helper classes
 
