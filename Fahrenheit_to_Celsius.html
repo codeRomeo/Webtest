@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=.9">
+       <style>
+      
+      /*
+      
+      html {
+                  background: url('https://dl.dropbox.com/s/gep9mtyej3wd6ic/Aerial09.jpg?dl=0'); no-repeat center center fixed;
+                  background-size: contain;
+                  font-family: 'Shift', sans-serif;
+      						-webkit-text-stroke: 1px black;
+                  text-shadow: 2px 2px 5px black;
+
+              }
+
+              input, textarea {
+                  max-width:100%
+              }
+
+              #button {
+
+
+                  color: black;
+                  background-color: #CFCFD0;
+                  font-size: 20px;
+                  cursor: pointer;
+
+              }
+
+              #button:hover {
+
+                  color: white;
+                  background: gray;
+                  box-shadow: 4px 4px 4px black;
+              }
+
+              div.head {
+
+                  float: center;
+                  width: 480px;
+                  border:3px solid steelblue;
+                  padding: 10px;
+
+                  color: white;
+                  font-weight: bold;
+                  padding-top: 14px;
+                  padding-bottom: 14px;
+                  padding-left: 30px;
+                  position: relative;
+                  z-index: 2;
+                  background-color: gray;
+                  opacity: .8;
+              }
+
+              div.sub {
+
+                float: center;
+                width: 480px;
+                border:3px solid steelblue;
+                padding: 10px;
+
+                  color: white;
+                  font-size: 20px;
+                  padding-top: 10px;
+                  padding-bottom: 14px;
+                  padding-left: 30px;
+                  position: center;
+                  z-index: 2;
+                  background-color: #aabbff;
+                  opacity: .8;
+
+              }
+
+              #FInput, #CInput {
+                  background-color: #CFCFD0;
+                  -moz-border-radius: 5px;
+                  -webkit-border-radius: 5px;
+                  border-color: black;
+                  border-radius: 5px;
+                  color: black;
+
+                  font-size: 20px;
+                  cursor: pointer;
+                  border: none;
+                }
+
+              div.links {
+
+                float: center;
+                width: 460px;
+                border:3px solid steelblue;
+
+
+                  padding: 30px;
+                  position: relative;
+                  z-index: 2;
+                  background-color: #ddddff;
+                  opacity: .8;
+
+              }
+
+              
+      
+      
+      */
+      
+      html {
+        /* float: center; 
+        width: 480px; */
+        /* border: 3px solid #8AC007; */
+        padding: 10px;
+        max-width: 800;
+        
+        /*background: url('https://goo.gl/04j7Nn');*/
+        background: url('https://dl.dropbox.com/s/twt9bsx37cu7nor/knitted-netting.png?dl=0');
+        min-height: 500px;
+        background-attachment: fixed;
+        /*background-position: center center;*/
+        */background-repeat: repeat;*/
+        background-size: cover;
+        
+        /* -webkit-text-stroke: 1px black;*/
+        font-family: 'Shift', sans-serif;
+        text-shadow: 2px 2px 3px white; 
+
+
+      }
+      
+    /*  div {
+        float: center;
+         
+      } */
+
+      input, textarea {
+        max-width:100%
+      }
+
+      #button {
+
+
+        color: black;
+        background-color: #CFCFD0;
+        font-size: 20px;
+        cursor: pointer;
+
+    }
+
+    #button:hover {
+
+        color: white;
+        background: gray;
+        box-shadow: 4px 4px 4px black;
+    }
+    
+      div.head {
+
+
+        font-weight: bold;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-left: 30px;
+        position: relative;
+        z-index: 2;
+        background-color: #a6a6a6;
+        opacity: .6;
+        box-shadow: 10px 10px
+
+      }
+
+      div.sub {
+
+        margin: 5px;
+        font-size: 20px;
+        padding-top: 10px;
+        padding-bottom: 14px;
+        padding-left: 30px;
+        position: center;
+        z-index: 4;
+        background-color: #aaccff;
+        opacity: .6;
+        box-shadow: 10px 10px;
+
+      }
+
+      div.links {
+
+        box-shadow: 10px 10px;
+        padding: 30px;
+        position: relative;
+        z-index: 2;
+        background-color: #a6a6a6;
+        opacity: .6;
+
+      }
+      
+      #FInput, #CInput {
+        background-color: #CFCFD0;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-color: black;
+        border-radius: 5px;
+        color: black;
+
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+          }
+          
+          #FInput:hover, #CInput:hover 
+          {
+           border-color: black;
+          border-radius: 5px;
+              }
+
+      </style>
+
+
+	</head>
+     <body>
+            <title>Convert Fahrenheit to Celsius</title>
+
+            <div class="head">
+                <h1> Convert Fahrenheit to Celsius </h1>
+            </div>
+
+
+            <div class="sub">
+                    <h3>
+
+                    <!-- setup view interface layout and element IDs for controller -->
+
+
+                    Fahrenheit : <input type="text" id="FInput" value="">
+                    <button ref="button" id="button" onclick="f2c()">Convert </button>
+
+                     <ul id="C_out"> Celsius : </ul>
+
+                    Celsius : <input type="text" id="CInput" value="">
+
+                    <button ref="button" id="button" onclick="c2f()">Convert </button>
+
+                    <ul id="F_out"> Fahrenheit : </ul>
+
+                  </h3>
+
+                </div>
+                <div class="links">
+                        <a href="http://www.coderomeo.com"> Back </a>
+                </div>
+
+            <!-- View Contoller  -->
+
+            <script>
+
+            // global variables
+
+            var inputF = 1;
+            var inputC = 1;
+            var outputF = 1;
+            var outputC = 1;
+
+
+            function c2f() {
+
+
+                inputC = parseInt(document.getElementById("CInput").value,10);
+                outputF = ((inputC*9/5+32)).toFixed(2);
+
+                document.getElementById("F_out").innerHTML = "Fahrenheit : " + outputF;
+
+                };
+
+            function f2c()  {
+
+                    inputF = parseInt(document.getElementById("FInput").value,10);
+                    outputC = (((inputF-32)*5/9)).toFixed(2);
+
+                    document.getElementById("C_out").innerHTML = "Celsius : " + outputC;
+                };
+
+
+            </script>
+
+    </body>
+
+</html>

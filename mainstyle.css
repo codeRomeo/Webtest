@@ -1,0 +1,72 @@
+<style>
+html { 
+	background: url('https://goo.gl/04j7Nn'); no-repeat center center fixed; 
+	background-size: contain;
+	font-family: 'Shift', sans-serif;
+	text-shadow: 2px 2px 3px gray;
+	
+
+}
+
+input, textarea {
+	max-width:100%
+}
+	
+#button {
+	background-color: #CFCFD0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-color: black;
+	border-radius: 5px;
+	color: black;
+	
+	font-size: 24px;
+	cursor: pointer;
+	border: none;
+}
+
+#button:hover {
+	
+	color: white;
+	background: gray;
+	box-shadow: 4px 4px 2px #E6E6E7;
+}
+div .head {
+	
+	font-weight: bold;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-left: 30px; 
+	position: relative;
+	z-index: 2;
+	background-color: #ffffff;
+	opacity: .6;
+	
+}
+
+div .Sub {
+	
+	font-size: 20px;	
+	padding-top: 10px;
+	padding-bottom: 14px;
+	padding-left: 30px; 
+	position: center;
+	z-index: 2;
+	background-color: #aabbff;
+	opacity: .8;
+				
+}
+
+div .links {
+		
+	padding: 30px;
+	position: relative;
+	z-index: 2;
+	background-color: #ddddff;
+	opacity: .8;
+				
+}
+
+
+
+</style>

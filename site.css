@@ -1,0 +1,64 @@
+body {
+	background-color: yellow;
+	font-family: "Tahoma";
+}
+
+header {
+	font-family: "Trebuchet MS";
+	font-size: 20px;
+	border: 10px red solid;
+	padding-left: 15px;
+
+}
+
+p {
+
+	border: 10px red solid;
+	padding-left: 15px;
+	padding-bottom: 20px;
+	width: 200px;
+	margin-bottom: 20px;
+
+}
+
+p:hover {
+	
+	color: yellow;
+	background-color: red;
+
+
+}
+
+
+a {
+	margin: 20px;
+	font-size: 20px;
+	color: red;
+}
+
+nav {
+	font-family: "Trebuchet MS";
+	font-size: 20px;
+
+}
+nav:hover {
+
+	color: yellow;
+	box-shadow: 5px 5px 10 px black;
+
+}
+
+.special-p {
+
+	width: 75%;
+	background-color: violet;
+	border: 0;
+	color: white;
+	margin: 0;
+	box-shadow: 5px 5px 10px black;
+
+}
+
+.div image {
+	box-shadow: 5px 5px 10px black;
+}
