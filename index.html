@@ -106,206 +106,54 @@
 
 
 <body>
-<div id="wrap">
-	<div class="head">
-		<h1>Rock Paper Scissors</h1>
-		<h4> A game by codeRomeo(c) 2015 </h4>
-	</div>
-	<!-- setup view interface layout and element IDs for controller -->
-
-			<div class="sub">
-					<p id="score"> Score : </p>
-					<p id="user"> You : </p>
-					<p id="computer"> Computer : </p>
-					<p id="result"> Who wins ?.. </p>
-
-						<!-- setup view interface layout for user choice buttons and element IDs for controller -->
-						<!-- Play function is the View Contoller  -->
-
-
-						<button type="button" id ="button" onclick="play('rock')">Rock </button>
-						<button type="button" id ="button" onclick="play('paper')">Paper </button>
-						<button type="button" id ="button" onclick="play('scissors')">Scissors </button>
-
-			</div>
-			<div class="links">
-					<p id="links"> Other links </p>
-					<ul>
-					<li> <a href="https://coderomeo.github.io/Webtest/hello.html"> IronHack Workshop </a>
-					<li> <a href="https://coderomeo.github.io/Webtest/Fahrenheit_to_Celsius.html"> Temperature Converter </a>
-					<li> <a href="https://coderomeo.github.io/Webtest/SecondPage.html"> Second page </a>
-					<li> <a href="http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=1"> ON </a>
-					<li> <a href="http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=0"> OFF </a>
-						
-						
-						<button type="button" id ="button" onclick="ON()"> ON </button>
-						<button type="button" id ="button" onclick="OFF()"> OFF </button>
-					</ul>
-			</div>
-
 	
-	
-<button onclick="myFunction()">Click me</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Hello World";
-}
-</script>	
-	
-<script>
-
-/* global variables */
-var userScore = 0;
-var computerScore = 0;
-var userChoice ="";
-var computerChoice="";
-
-
-// Main view Controller class instance
-
-function play(userChoice) {
-
-
-
-	computerChoice = randomize();
-
-	document.getElementById("user").innerHTML = "You -- > " + userChoice; // display User choice
-	document.getElementById("computer").innerHTML = "Computer -- >  " + computerChoice; // display computer choice
-	document.getElementById("result").innerHTML = compare(userChoice, computerChoice); // display results
-	document.getElementById("score").innerHTML = "Scores --- You: [ "+userScore+" ] --- Computer : [ "+computerScore+" ]"; // display scores
-
-	// Play Function ends
-
-}
-	
-	function ON() {
-		document.getElementById("demo").innerHTML = "ON";
-		
-		const http = new XMLHttpRequest()
-
-		http.open("GET", "http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=1")
-		http.send()
-
-		http.onload = () => console.log(http.responseText)
-	}
-	
-	function OFF() {
-		document.getElementById("demo").innerHTML = "OFF";
-		
-		const http = new XMLHttpRequest()
-
-		http.open("GET", "http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=0")
-		http.send()
-
-		http.onload = () => console.log(http.responseText)
-	}
-	
-	
-
-// helper classes
-
-function randomize() {
-// This class  returns Rock, Paper or scissors rondomly randomizes Computer choice and
-
-	var x = Math.random();
-
-	if (x < 0.34)  return "rock"
-	else if (x <= 0.67) return  "paper"
-	else return "scissors";
-
-	}
-
-
-/* compare class function to determine winner */
-function compare(choice1, choice2) {
-
-	if (choice1 === choice2) return "The result is a tie!"
-
-		else if (choice1 === "rock") {
-			if (choice2 === "scissors" )  { userScore++; return "Rock wins"; }
-			else { computerScore++; return "Paper wins";}
-		}
-		else if (choice1 === "paper") {
-			if (choice2 === "rock" ) { userScore++; return "Paper wins" }
-			else { computerScore++; return "Scissors wins" }
-		}
-		else if (choice1 === "scissors") {
-			if (choice2 === "rock" ) { computerScore++; return "Rock wins" }
-			else { userScore++; return "Scissors wins" }
-		}
-
-		// compare Function ends
-	}
-
-</script>
-
-
 <div class="head">
-	<h1> Convert Fahrenheit to Celsius </h1>
+	<h1> ESP32 Control </h1>
 </div>
 
+<div class=sub>
+	
+		<ul>
+		<li> <a href="http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=1"> ON </a>
+		<li> <a href="http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=0"> OFF </a>
+		</ul>
 
-<div class="sub">
-		<h3>
 
-		<!-- setup view interface layout and element IDs for controller -->
+	<button type="button" id ="button" onclick="ON()"> ON </button>
+	<button type="button" id ="button" onclick="OFF()"> OFF </button>
 
-
-		Fahrenheit : <input type="text" id="FInput" value="">
-		<button ref="button" id="button" onclick="f2c()">Convert </button>
-
-		 <ul id="C_out"> Celsius : </ul>
-
-		Celsius : <input type="text" id="CInput" value="">
-
-		<button ref="button" id="button" onclick="c2f()">Convert </button>
-
-		<ul id="F_out"> Fahrenheit : </ul>
-
-	  </h3>
-
-	</div>
-	<div class="links">
-			<a href="http://www.coderomeo.com"> Back </a>
-	</div>
 </div>
-
-<!-- View Contoller  -->
-
+	
 <script>
 
-// global variables
+		function ON() {
+				document.getElementById("demo").innerHTML = "ON";
 
-var inputF = 1;
-var inputC = 1;
-var outputF = 1;
-var outputC = 1;
+				const http = new XMLHttpRequest()
 
+				http.open("GET", "http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=1")
+				http.send()
 
-function c2f() {
+				http.onload = () => console.log(http.responseText)
+			}
 
+		function OFF() {
+				document.getElementById("demo").innerHTML = "OFF";
 
-	inputC = parseInt(document.getElementById("CInput").value,10);
-	outputF = ((inputC*9/5+32)).toFixed(2);
+				const http = new XMLHttpRequest()
 
-	document.getElementById("F_out").innerHTML = "Fahrenheit : " + outputF;
+				http.open("GET", "http://blynk-cloud.com/U94h_6N5vw8lk3GVnzVZ9pAhC7RvdWQZ/update/D23?value=0")
+				http.send()
 
-	};
-
-function f2c()  {
-
-		inputF = parseInt(document.getElementById("FInput").value,10);
-		outputC = (((inputF-32)*5/9)).toFixed(2);
-
-		document.getElementById("C_out").innerHTML = "Celsius : " + outputC;
-	};
-
+				http.onload = () => console.log(http.responseText)
+			}
+	
 
 </script>
+
+
 
 
 </body>
 </html>
+
